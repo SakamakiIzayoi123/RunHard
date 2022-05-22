@@ -124,49 +124,6 @@ public:
     void update(float delta_time);
     void render(RenderWindow *window);
 };
-void state_tutorial::init()
-{
-    tex.setString("Tutorial");
-    tex.setScale(2, 2);
-    tex.setOutlineThickness(2);
-    tex.setOutlineColor(Color::Black);
-    tex.setFillColor(Color(205, 115, 69));
-    tex.setFont(*m_data->getFont("ARCADE.TTF"));
-    tex.setPosition(screenWidth / 2 - 100, 70);
-
-    s = "A: run left\nD: run right\nW: jump\nS: attack\nCan double jump.";
-    tut.setString(s);
-    tut.setOutlineThickness(1);
-    tut.setOutlineColor(Color::Black);
-    tut.setFillColor(Color::White);
-    tut.setFont(*m_data->getFont("ARCADE.TTF"));
-    tut.setPosition(screenWidth / 2 - 100, 200);
-
-    button *exitButton = new button;
-    exitButton->init();
-    exitButton->setAction([]()
-                          { changeStateMachine.changeState(menu); });
-    exitButton->setPosition(Vector2f(screenWidth - 40, 40));
-    exitButton->setTexture(bt_data->getTexture("close"));
-    m_button.push_back(exitButton);
-
-    background.setTexture(*bg_data->getTexture("Background"));
-    float height = bg_data->getTexture("Background")->getSize().y;
-    background.setPosition(Vector2f(0, screenHeight - height));
-}
-void state_tutorial::update(float delta_time = 0)
-{
-    for (int i = 0; i < m_button.size(); i++)
-        m_button[i]->clickEvent(window);
-};
-void state_tutorial::render(RenderWindow *window)
-{
-    window->draw(background);
-    for (int i = 0; i < m_button.size(); i++)
-        window->draw(*m_button[i]);
-    window->draw(tex);
-    window->draw(tut);
-}
 
 game_state *create(state_type state)
 {
@@ -257,7 +214,7 @@ void state_menu::init()
     settingButton = new button;
     settingButton->init();
     settingButton->setAction([]()
-                             { playMusic = playMusic ? false : true;});
+                             { playMusic = playMusic ? false : true; });
     settingButton->setPosition(Vector2f(screenWidth / 2 - 90, screenHeight - 80));
     settingButton->setTexture(bt_data->getTexture(playMusic ? "music" : "music_off"));
 
@@ -451,12 +408,12 @@ void state_highScore::init()
 
     tex.setFont(*m_data->getFont("ARCADE.TTF"));
     tex.setString("High Score");
-    tex.setFillColor(Color::White);
-    tex.setPosition(screenWidth / 2 - 200, 50);
+    tex.setFillColor(Color::Magenta);
+    tex.setPosition(screenWidth / 2 - 175, 75);
     tex.setCharacterSize(50);
     tex.setOutlineThickness(3);
     tex.setOutlineColor(Color::Black);
-    tex.setScale(2, 2);
+    tex.setScale(1.5, 1.5);
 
     button *exitButton = new button;
     exitButton->init();
@@ -478,4 +435,48 @@ void state_highScore::render(RenderWindow *window)
         window->draw(*m_button[i]);
     window->draw(score);
     window->draw(tex);
+}
+
+void state_tutorial::init()
+{
+    tex.setString("Tutorial");
+    tex.setScale(2, 2);
+    tex.setOutlineThickness(2);
+    tex.setOutlineColor(Color::Black);
+    tex.setFillColor(Color(205, 115, 69));
+    tex.setFont(*m_data->getFont("ARCADE.TTF"));
+    tex.setPosition(screenWidth / 2 - 100, 70);
+
+    s = "A: run left\nD: run right\nW: jump\nS: attack\nCan double jump.";
+    tut.setString(s);
+    tut.setOutlineThickness(1);
+    tut.setOutlineColor(Color::Black);
+    tut.setFillColor(Color::White);
+    tut.setFont(*m_data->getFont("ARCADE.TTF"));
+    tut.setPosition(screenWidth / 2 - 100, 200);
+
+    button *exitButton = new button;
+    exitButton->init();
+    exitButton->setAction([]()
+                          { changeStateMachine.changeState(menu); });
+    exitButton->setPosition(Vector2f(screenWidth - 40, 40));
+    exitButton->setTexture(bt_data->getTexture("close"));
+    m_button.push_back(exitButton);
+
+    background.setTexture(*bg_data->getTexture("Background"));
+    float height = bg_data->getTexture("Background")->getSize().y;
+    background.setPosition(Vector2f(0, screenHeight - height));
+}
+void state_tutorial::update(float delta_time = 0)
+{
+    for (int i = 0; i < m_button.size(); i++)
+        m_button[i]->clickEvent(window);
+};
+void state_tutorial::render(RenderWindow *window)
+{
+    window->draw(background);
+    for (int i = 0; i < m_button.size(); i++)
+        window->draw(*m_button[i]);
+    window->draw(tex);
+    window->draw(tut);
 }

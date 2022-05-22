@@ -22,7 +22,7 @@ void creeper_manager::init()
     cr = new creep();
     for (int i = 0; i < 3; i++)
     {
-        rh[i] = new rhino((rand() % 1000) % 3 * 50 +50, rand() % 400 + screenWidth + i * 300);
+        rh[i] = new rhino((rand() % 1000) % 3 * 50 + 50, rand() % 400 + screenWidth + i * 300 + 100);
     }
     for (int i = 0; i < 4; i++)
     {
