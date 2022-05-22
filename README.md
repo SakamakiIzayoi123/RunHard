@@ -13,6 +13,7 @@
     Một cung thủ đi lạc vào khu rừng. Anh ta bị một con cóc lớn đuổi theo và lũ quái vật cản đường, trên trời là đàn rơi.
     Bằng khả năng của mình hãy giúp anh ta sống sót lâu nhất.
 3.Mô tả chức năng cài đặt:
+    https://youtu.be/FAV9kosR61I;
     Bật tăt âm thanh;
     Hệ thống điểm cao: sau mỗi lượt chơi điểm sẽ được ghi lại nếu đạt điểm cao;
 4.Các kĩ thuật sử dụng:
