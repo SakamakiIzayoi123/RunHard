@@ -13,4 +13,4 @@ all: compile link
 compile:
 	g++ -c $(SOURCE).cpp -I $(INCLUDE)
 link:
-	g++ $(CXXFLAGS) $(SOURCE).o -o main -L $(LIBRARY) $(SFMLFLAGS) $(SFML_INCLUDE)
+	g++ $(CXXFLAGS) $(SOURCE).o -o main -L $(LIBRARY) $(SFMLFLAGS) $(SFML_INCLUDE)   bbb
