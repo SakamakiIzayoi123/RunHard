@@ -1,0 +1,6 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'c:/RunHard'
+g++ -c main.cpp -I "C:\SFML-2.5.1\include"
+g++  main.o -o main -L "C:\SFML-2.5.1\lib"  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+make.exe: Leaving directory 'c:/RunHard'
+ 
