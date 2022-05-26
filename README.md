@@ -17,6 +17,7 @@
 3.Mô tả chức năng cài đặt:
     https://youtu.be/FAV9kosR61I;
     FPS được đặt ở mức 60;
+    Nhân vật và quái vật có nhiều trạng thái như đứng yên, di chuyển, tấn công, chết, ...;
     Âm thanh đa dạng có thể bật tắt tại menu;
     Hiển thị điểm khi đang chơi và khi chết, điểm cao sẽ được lưu lại ở High Score(hình cái cúp trong Menu);
     Hình nền nhiều lớp được tạo thành từ 12 file png tạo cảm giác chân thực, sống động khi di chuyển;
@@ -34,7 +35,7 @@
     Hướng phát triển cho game: 
         - Tạo ra thêm các item(tăng điểm nhận được trong 1 khoảng thời gian, item cho khả năng bất tử, ...).
         - Thêm chức năng thông báo và lưu tên người chơi khi được điểm cao.
-        - Cập nhật thêm nhân vật lựa chọn;
+        - Cập nhật thêm nhân vật để lựa chọn;
     Kết luận:
         - Việc học thư viện mới lúc đầu khá khó khăn nhưng quen thì sử dụng rất dễ;
         - Tách file giúp quản lí dễ dàng hơn;
